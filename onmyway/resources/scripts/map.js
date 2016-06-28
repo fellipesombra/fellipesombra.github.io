@@ -33,7 +33,7 @@ function getMapInfo () {
 
     jQuery.ajax({
         type: "GET",
-        url: "http://localhost:8080/onmyway-service/rest/map/trip/"+$.QueryString["trip"], //depois mudar hostname para ser dinâmico
+        url: "http://fellipesombra.github.io/onmyway-service/rest/map/trip/"+$.QueryString["trip"], //depois mudar hostname para ser dinâmico
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data, status, jqXHR) {
