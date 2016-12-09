@@ -1,0 +1,335 @@
+@base <http://dadoscontraosagrotoxicos.org/datacube/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix obo: <http://purl.obolibrary.org/obo#>.
+@prefix sdmx_code: <http://purl.org/linked-data/sdmx/2009/code#>.
+@prefix sdmx_dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix cube: <http://purl.org/linked-data/cube#>.
+@prefix ex: <http://dadoscontraosagrotoxicos.org/datacube/>.
+@prefix exProp: <http://dadoscontraosagrotoxicos.org/datacube/properties/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix db: <http://dbpedia.org/resource/>.
+@prefix yago: <http://dbpedia.org/class/yago/>. 
+
+<> a owl:Ontology ;
+	rdfs:label "Example DataCube Knowledge Base" ;
+	dc:description "This knowledgebase contains one Data Structure Definition with one Data Set. This Data Set has a couple of Components and Observations." .
+
+#
+# Data Structure Definitions
+#
+
+ex:dsd a cube:DataStructureDefinition ;
+	rdfs:label "A Data Structure Definition"@en ;
+	rdfs:comment "Defines the structure of a DataSet or slice." ;
+	cube:component 	<http://dbpedia.org/resource/states_of_brazil>,
+	<http://dbpedia.org/resource/pesticide>,
+	<http://dbpedia.org/resource/year>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoproduto>,
+	<http://dbpedia.org/resource/price>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdproduto>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdintoxicacoes>,
+	<http://www.w3.org/2000/01/rdf-schema#label>,
+	<http://www.w3.org/2001/XMLSchema#string> .
+
+#
+# Component Specifications
+#
+
+<http://dbpedia.org/resource/states_of_brazil> a cube:ComponentSpecification ;
+	rdfs:label "Estado" ;
+	cube:dimension exProp:estado.
+
+<http://dbpedia.org/resource/pesticide> a cube:ComponentSpecification ;
+	rdfs:label "Classe de Agrotóxico" ;
+	cube:dimension exProp:classeagrotoxico.
+
+<http://dbpedia.org/resource/year> a cube:ComponentSpecification ;
+	rdfs:label "Ano" ;
+	cube:dimension exProp:ano.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoproduto> a cube:ComponentSpecification ;
+	rdfs:label "Tipo de Produto de Agrotóxico" ;
+	cube:dimension exProp:tipoproduto.
+
+<http://www.w3.org/2001/XMLSchema#float> a cube:ComponentSpecification ;
+	rdfs:label "Component Specification of Unit" ;
+	cube:attribute exProp:unit .
+
+<http://dbpedia.org/resource/Price> a cube:ComponentSpecification ;
+	rdfs:label "Custo Total de Compra de Toneladas de Agrotóxico" ;
+	cube:measure exProp:custocompra.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdProduto> a cube:ComponentSpecification ;
+	rdfs:label "Quantidade de Agrotóxico por Toneladas" ;
+	cube:measure exProp:qtdproduto.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdIntoxicacoes> a cube:ComponentSpecification ;
+	rdfs:label "Quantidade de Casos de Intoxicação Registrados pelo SINAN do Ministério da Saúde" ;
+	cube:measure exProp:qtdintoxicacoes.
+
+<http://www.w3.org/2000/01/rdf-schema#label> a cube:ComponentSpecification ;
+	rdfs:label "Label" ;
+	cube:measure exProp:label.
+
+#
+# Data Set
+#
+ex:dataset a cube:DataSet ;
+	rdfs:label "A DataSet"^^<http://www.w3.org/2001/XMLSchema#string> ;
+	rdfs:comment "Represents a collection of observations and conforming to some common dimensional structure." ;
+	cube:structure ex:dsd .
+
+#
+# Dimensions, Unit and Measure
+#
+exProp:estado a cube:DimensionProperty ;
+	rdfs:label "Estado"@en .
+
+exProp:classeagrotoxico a cube:DimensionProperty ;
+	rdfs:label "Classe de Agrotóxico"@en .
+
+exProp:ano a cube:DimensionProperty ;
+	rdfs:label "Ano"@en .
+
+exProp:tipoproduto a cube:DimensionProperty ;
+	rdfs:label "Tipo de Produto de Agrotóxico"@en .
+
+exProp:unit a cube:AttributeProperty ;
+	rdfs:label "Unit" .
+
+exProp:custocompra a cube:MeasureProperty ;
+	rdfs:label "Custo Total de Compra de Toneladas de Agrotóxico" .
+
+exProp:qtdproduto a cube:MeasureProperty ;
+	rdfs:label "Quantidade de Agrotóxico por Toneladas" .
+
+exProp:qtdintoxicacoes a cube:MeasureProperty ;
+	rdfs:label "Quantidade de Casos de Intoxicação Registrados pelo SINAN do Ministério da Saúde" .
+
+exProp:label a cube:MeasureProperty ;
+	rdfs:label "Label" .
+
+#
+# HIERARCHYS
+#
+
+ex: a ex: ;
+	obo:part_of ex:;
+	rdfs:label ""@en .
+
+#
+# Data Set 1
+#
+
+ex:obj0 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Rio_de_Janeiro_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "15538000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "754"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "83"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Rio de Janeiro em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj1 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Rio_de_Janeiro_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "17836400"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "851"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "51"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Rio de Janeiro em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj2 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Rio_de_Janeiro_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "17540600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "219"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "83"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Rio de Janeiro em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj3 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Rio_de_Janeiro_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "17200600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "172"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "51"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Rio de Janeiro em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj4 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/São_Paulo_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "1682252000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "52333"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "635"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em São Paulo em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj5 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/São_Paulo_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "2044505000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "68211"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "653"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em São Paulo em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj6 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/São_Paulo_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "1449940200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "18997"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "635"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em São Paulo em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj7 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/São_Paulo_(state)> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "1704892600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "23236"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "653"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em São Paulo em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj8 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Espírito_Santo> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "43574400"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "2706"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "290"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Espírito Santo em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj9 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Espírito_Santo> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "75629600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "3568"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "327"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Espírito Santo em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj10 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Espírito_Santo> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "82946400"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "968"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "290"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Espírito Santo em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj11 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Espírito_Santo> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "89260200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "868"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "327"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Espírito Santo em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj12 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Minas_Gerais> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "624172000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "25972"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "626"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em Minas Gerais em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj13 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Minas_Gerais> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "691645000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "28671"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "820"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em Minas Gerais em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj14 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Minas_Gerais> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "855147600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "10310"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "626"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em Minas Gerais em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj15 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:estado <http://dbpedia.org/resource/Minas_Gerais> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticide> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> ;
+	exProp:unit "Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. " ;
+	exProp:custocompra "1038560600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "13439"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:qtdintoxicacoes "820"^^<http://dbpedia.org/resource/Integer> ;
+	exProp:label "Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em Minas Gerais em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+

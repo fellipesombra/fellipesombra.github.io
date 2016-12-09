@@ -1,0 +1,264 @@
+@base <http://dadoscontraosagrotoxicos.org/datacube/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix obo: <http://purl.obolibrary.org/obo#>.
+@prefix sdmx_code: <http://purl.org/linked-data/sdmx/2009/code#>.
+@prefix sdmx_dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix cube: <http://purl.org/linked-data/cube#>.
+@prefix ex: <http://dadoscontraosagrotoxicos.org/datacube/>.
+@prefix exProp: <http://dadoscontraosagrotoxicos.org/datacube/properties/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix db: <http://dbpedia.org/resource/>.
+@prefix yago: <http://dbpedia.org/class/yago/>.
+@prefix dbo: <http://dbpedia.org/ontology/>. 
+
+<> a owl:Ontology ;
+	rdfs:label "Example DataCube Knowledge Base" ;
+	dc:description "This knowledgebase contains one Data Structure Definition with one Data Set. This Data Set has a couple of Components and Observations." .
+
+#
+# Data Structure Definitions
+#
+
+ex:dsd a cube:DataStructureDefinition ;
+	rdfs:label "A Data Structure Definition"@en ;
+	rdfs:comment "Defines the structure of a DataSet or slice." ;
+	cube:component 	<http://dbpedia.org/ontology/plant>,
+	<http://dbpedia.org/resource/year>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/classeagrotoxico>,
+	<http://dbpedia.org/resource/price>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdproduto>,
+	<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoproduto>,
+	<http://www.w3.org/2000/01/rdf-schema#label>,
+	<http://www.w3.org/2001/XMLSchema#string> .
+
+#
+# Component Specifications
+#
+
+<http://dbpedia.org/ontology/plant> a cube:ComponentSpecification ;
+	rdfs:label "Cultura Agrícola" ;
+	cube:dimension exProp:cultura.
+
+<http://dbpedia.org/resource/year> a cube:ComponentSpecification ;
+	rdfs:label "Classe de Agrotóxico" ;
+	cube:dimension exProp:ano.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/classeagrotoxico> a cube:ComponentSpecification ;
+	rdfs:label "Ano" ;
+	cube:dimension exProp:classeagrotoxico.
+
+<http://www.w3.org/2001/XMLSchema#float> a cube:ComponentSpecification ;
+	rdfs:label "Component Specification of Unit" ;
+	cube:attribute exProp:unit .
+
+<http://dbpedia.org/resource/Price> a cube:ComponentSpecification ;
+	rdfs:label "Custo Total de Compra de Toneladas de Agrotóxico" ;
+	cube:measure exProp:custocompra.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/qtdProduto> a cube:ComponentSpecification ;
+	rdfs:label "Quantidade de Agrotóxico por Toneladas" ;
+	cube:measure exProp:qtdproduto.
+
+<http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto> a cube:ComponentSpecification ;
+	rdfs:label "Tipo de Produto Agrotóxico" ;
+	cube:measure exProp:tipoproduto.
+
+<http://www.w3.org/2000/01/rdf-schema#label> a cube:ComponentSpecification ;
+	rdfs:label "Label" ;
+	cube:measure exProp:label.
+
+#
+# Data Set
+#
+ex:dataset a cube:DataSet ;
+	rdfs:label "A DataSet"^^<http://www.w3.org/2001/XMLSchema#string> ;
+	rdfs:comment "Represents a collection of observations and conforming to some common dimensional structure." ;
+	cube:structure ex:dsd .
+
+#
+# Dimensions, Unit and Measure
+#
+exProp:cultura a cube:DimensionProperty ;
+	rdfs:label "Cultura Agrícola"@en .
+
+exProp:ano a cube:DimensionProperty ;
+	rdfs:label "Classe de Agrotóxico"@en .
+
+exProp:classeagrotoxico a cube:DimensionProperty ;
+	rdfs:label "Ano"@en .
+
+exProp:unit a cube:AttributeProperty ;
+	rdfs:label "Unit" .
+
+exProp:custocompra a cube:MeasureProperty ;
+	rdfs:label "Custo Total de Compra de Toneladas de Agrotóxico" .
+
+exProp:qtdproduto a cube:MeasureProperty ;
+	rdfs:label "Quantidade de Agrotóxico por Toneladas" .
+
+exProp:tipoproduto a cube:MeasureProperty ;
+	rdfs:label "Tipo de Produto Agrotóxico" .
+
+exProp:label a cube:MeasureProperty ;
+	rdfs:label "Label" .
+
+#
+# HIERARCHYS
+#
+
+ex: a ex: ;
+	obo:part_of ex:;
+	rdfs:label ""@en .
+
+#
+# Data Set 1
+#
+
+ex:obj0 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Rice> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "339904800"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "7973"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Arroz em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj1 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Rice> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "111768200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "1557"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola de Arroz em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj2 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Rice> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "371334400"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "9312"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Arroz em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj3 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Rice> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "121087600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "1250"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola de Arroz em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj4 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Tomatoe> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "40208400"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "844"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Tomate em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj5 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Tomatoe> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "168820200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "1675"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola de Tomate em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj6 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Tomatoe> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "25326600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "878"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Tomate em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj7 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Tomatoe> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "186673600"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "2000"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola deTomate em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj8 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Peaneaple> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "6113200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "366"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Maçã em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj9 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Peaneaple> ;
+	exProp:ano "2011"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "22236000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "1870"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola de Maçã em 2011"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj10 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Peaneaple> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Herbicida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "6776200"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "264"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo herbicida na produção agrícola de Maçã em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
+ex:obj11 a cube:Observation ;
+	cube:dataSet ex:dataset ;
+	exProp:cultura <http://dbpedia.org/resource/Peaneaple> ;
+	exProp:ano "2012"^^<http://dbpedia.org/resource/Year> ;
+	exProp:classeagrotoxico <http://dbpedia.org/resource/Inseticida> ;
+	exProp:unit "Consumo de Agrotóxico de uma determinada Classe na produção de uma determinada Cultura e um Ano no Brasil. " ;
+	exProp:custocompra "21369000"^^<http://dbpedia.org/resource/Brazilian_real> ;
+	exProp:qtdproduto "5927"^^<http://dbpedia.org/resource/Tonne> ;
+	exProp:tipoproduto "Produto comercial"^^<http://dbpedia.org/resource/String> ;
+	exProp:label "Uso de agrotóxico do tipo inseticida na produção agrícola de Maçã em 2012"^^<http://dbpedia.org/resource/String> ;
+	rdfs:label "" .
+
