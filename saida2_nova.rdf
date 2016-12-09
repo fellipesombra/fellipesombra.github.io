@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:ns0="http://purl.obolibrary.org/obo#"
+         xmlns:qb="http://purl.org/linked-data/cube#"
+         xmlns:ns1="http://dadoscontraosagrotoxicos.org/datacube/properties/">
+
+  <owl:Ontology rdf:about="http://dadoscontraosagrotoxicos.org/datacube/">
+    <rdf:type rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/"/>
+    <rdfs:label>Example DataCube Knowledge Base</rdfs:label>
+    <rdfs:label xml:lang="en"></rdfs:label>
+    <dc11:description>This knowledgebase contains one Data Structure Definition with one Data Set. This Data Set has a couple of Components and Observations.</dc11:description>
+    <ns0:part_of rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/"/>
+  </owl:Ontology>
+
+  <qb:DataStructureDefinition rdf:about="http://dadoscontraosagrotoxicos.org/datacube/dsd">
+    <rdfs:label xml:lang="en">A Data Structure Definition</rdfs:label>
+    <rdfs:comment>Defines the structure of a DataSet or slice.</rdfs:comment>
+    <qb:component>
+      <qb:ComponentSpecification rdf:about="http://dbpedia.org/ontology/plant">
+        <rdfs:label></rdfs:label>
+        <qb:dimension>
+          <qb:DimensionProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/cultura">
+            <rdfs:label xml:lang="en"></rdfs:label>
+          </qb:DimensionProperty>
+        </qb:dimension>
+
+      </qb:ComponentSpecification>
+    </qb:component>
+
+    <qb:component>
+      <qb:ComponentSpecification rdf:about="http://dbpedia.org/resource/year">
+        <rdfs:label></rdfs:label>
+        <qb:dimension>
+          <qb:DimensionProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/ano">
+            <rdfs:label xml:lang="en"></rdfs:label>
+          </qb:DimensionProperty>
+        </qb:dimension>
+
+      </qb:ComponentSpecification>
+    </qb:component>
+
+    <qb:component>
+      <qb:ComponentSpecification rdf:about="http://dadoscontraosagrotoxicos.org/datacube/resource/classeagrotoxico">
+        <rdfs:label>Ano</rdfs:label>
+        <qb:dimension>
+          <qb:DimensionProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico">
+            <rdfs:label xml:lang="en">Ano</rdfs:label>
+          </qb:DimensionProperty>
+        </qb:dimension>
+
+      </qb:ComponentSpecification>
+    </qb:component>
+
+    <qb:component rdf:resource="http://dbpedia.org/resource/price"/>
+    <qb:component rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/resource/qtdproduto"/>
+    <qb:component rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/resource/tipoproduto"/>
+    <qb:component>
+      <qb:ComponentSpecification rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:label>Label</rdfs:label>
+        <qb:measure>
+          <qb:MeasureProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/label">
+            <rdfs:label>Label</rdfs:label>
+          </qb:MeasureProperty>
+        </qb:measure>
+
+      </qb:ComponentSpecification>
+    </qb:component>
+
+    <qb:component rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </qb:DataStructureDefinition>
+
+  <qb:ComponentSpecification rdf:about="http://www.w3.org/2001/XMLSchema#float">
+    <rdfs:label>Component Specification of Unit</rdfs:label>
+    <qb:attribute>
+      <qb:AttributeProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/unit">
+        <rdfs:label>Unit</rdfs:label>
+      </qb:AttributeProperty>
+    </qb:attribute>
+
+  </qb:ComponentSpecification>
+
+  <qb:ComponentSpecification rdf:about="http://dbpedia.org/resource/Price">
+    <rdfs:label></rdfs:label>
+    <qb:measure>
+      <qb:MeasureProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra">
+        <rdfs:label></rdfs:label>
+      </qb:MeasureProperty>
+    </qb:measure>
+
+  </qb:ComponentSpecification>
+
+  <qb:ComponentSpecification rdf:about="http://dadoscontraosagrotoxicos.org/datacube/resource/qtdProduto">
+    <rdfs:label></rdfs:label>
+    <qb:measure>
+      <qb:MeasureProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/qtdproduto">
+        <rdfs:label></rdfs:label>
+      </qb:MeasureProperty>
+    </qb:measure>
+
+  </qb:ComponentSpecification>
+
+  <qb:ComponentSpecification rdf:about="http://dadoscontraosagrotoxicos.org/datacube/resource/tipoProduto">
+    <rdfs:label></rdfs:label>
+    <qb:measure>
+      <qb:MeasureProperty rdf:about="http://dadoscontraosagrotoxicos.org/datacube/properties/tipoproduto">
+        <rdfs:label></rdfs:label>
+      </qb:MeasureProperty>
+    </qb:measure>
+
+  </qb:ComponentSpecification>
+
+  <qb:DataSet rdf:about="http://dadoscontraosagrotoxicos.org/datacube/dataset">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A DataSet</rdfs:label>
+    <rdfs:comment>Represents a collection of observations and conforming to some common dimensional structure.</rdfs:comment>
+    <qb:structure rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dsd"/>
+  </qb:DataSet>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj0">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Rice"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">339904800</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">7973</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj1">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Rice"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">111768200</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">1557</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj2">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Rice"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">371334400</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">9312</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj3">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Rice"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">121087600</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">1250</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj4">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Tomatoe"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">40208400</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">844</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj5">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Tomatoe"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">168820200</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">1675</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj6">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Tomatoe"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">25326600</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">878</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj7">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Tomatoe"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">186673600</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">2000</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj8">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Peaneaple"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">6113200</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">366</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj9">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Peaneaple"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2011</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">22236000</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">1870</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj10">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Peaneaple"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Herbicida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">6776200</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">264</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+  <qb:Observation rdf:about="http://dadoscontraosagrotoxicos.org/datacube/obj11">
+    <qb:dataSet rdf:resource="http://dadoscontraosagrotoxicos.org/datacube/dataset"/>
+    <ns1:cultura rdf:resource="http://dbpedia.org/resource/Peaneaple"/>
+    <ns1:ano rdf:datatype="http://dbpedia.org/resource/Year">2012</ns1:ano>
+    <ns1:classeagrotoxico rdf:resource="http://dbpedia.org/resource/Inseticida"/>
+    <ns1:unit></ns1:unit>
+    <ns1:custocompra rdf:datatype="http://dbpedia.org/resource/Brazilian_real">21369000</ns1:custocompra>
+    <ns1:qtdproduto rdf:datatype="http://dbpedia.org/resource/Tonne">5927</ns1:qtdproduto>
+    <ns1:tipoproduto rdf:datatype="http://dbpedia.org/resource/String">Produto comercial</ns1:tipoproduto>
+    <ns1:label rdf:datatype="http://dbpedia.org/resource/String"></ns1:label>
+    <rdfs:label></rdfs:label>
+  </qb:Observation>
+
+</rdf:RDF>
