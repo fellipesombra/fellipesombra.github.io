@@ -163,7 +163,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Classe de Agrotóxico',
+        'value' => 'Classe de AgrotÃ³xico',
       ),
     ),
     'http://purl.org/linked-data/cube#dimension' => 
@@ -217,7 +217,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Tipo de Produto de Agrotóxico',
+        'value' => 'Tipo de Produto de AgrotÃ³xico',
       ),
     ),
     'http://purl.org/linked-data/cube#dimension' => 
@@ -271,7 +271,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Custo Total de Compra de Toneladas de Agrotóxico',
+        'value' => 'Custo Total de Compra de Toneladas de AgrotÃ³xico',
       ),
     ),
     'http://purl.org/linked-data/cube#measure' => 
@@ -298,7 +298,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de Agrotóxico por Toneladas',
+        'value' => 'Quantidade de AgrotÃ³xico por Toneladas',
       ),
     ),
     'http://purl.org/linked-data/cube#measure' => 
@@ -325,7 +325,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de Casos de Intoxicação Registrados pelo SINAN do Ministério da Saúde',
+        'value' => 'Quantidade de Casos de IntoxicaÃ§Ã£o Registrados pelo SINAN do MinistÃ©rio da SaÃºde',
       ),
     ),
     'http://purl.org/linked-data/cube#measure' => 
@@ -435,7 +435,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Classe de Agrotóxico',
+        'value' => 'Classe de AgrotÃ³xico',
         'lang' => 'en',
       ),
     ),
@@ -475,7 +475,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Tipo de Produto de Agrotóxico',
+        'value' => 'Tipo de Produto de AgrotÃ³xico',
         'lang' => 'en',
       ),
     ),
@@ -514,7 +514,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Custo Total de Compra de Toneladas de Agrotóxico',
+        'value' => 'Custo Total de Compra de Toneladas de AgrotÃ³xico',
       ),
     ),
   ),
@@ -533,7 +533,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de Agrotóxico por Toneladas',
+        'value' => 'Quantidade de AgrotÃ³xico por Toneladas',
       ),
     ),
   ),
@@ -552,7 +552,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de Casos de Intoxicação Registrados pelo SINAN do Ministério da Saúde',
+        'value' => 'Quantidade de Casos de IntoxicaÃ§Ã£o Registrados pelo SINAN do MinistÃ©rio da SaÃºde',
       ),
     ),
   ),
@@ -632,7 +632,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -667,7 +667,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Rio de Janeiro em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida no Rio de Janeiro em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -737,7 +737,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -772,7 +772,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Rio de Janeiro em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida no Rio de Janeiro em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -842,7 +842,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -877,7 +877,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Rio de Janeiro em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida no Rio de Janeiro em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -947,7 +947,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -982,7 +982,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Rio de Janeiro em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida no Rio de Janeiro em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1018,7 +1018,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/São_Paulo_(state)',
+        'value' => 'http://dbpedia.org/resource/SÃ£o_Paulo_(state)',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1052,7 +1052,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1087,7 +1087,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em São Paulo em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida em SÃ£o Paulo em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1123,7 +1123,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/São_Paulo_(state)',
+        'value' => 'http://dbpedia.org/resource/SÃ£o_Paulo_(state)',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1157,7 +1157,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1192,7 +1192,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em São Paulo em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida em SÃ£o Paulo em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1228,7 +1228,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/São_Paulo_(state)',
+        'value' => 'http://dbpedia.org/resource/SÃ£o_Paulo_(state)',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1262,7 +1262,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1297,7 +1297,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em São Paulo em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida em SÃ£o Paulo em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1333,7 +1333,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/São_Paulo_(state)',
+        'value' => 'http://dbpedia.org/resource/SÃ£o_Paulo_(state)',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1367,7 +1367,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1402,7 +1402,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em São Paulo em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida em SÃ£o Paulo em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1438,7 +1438,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/Espírito_Santo',
+        'value' => 'http://dbpedia.org/resource/EspÃ­rito_Santo',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1472,7 +1472,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1507,7 +1507,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Espírito Santo em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida no EspÃ­rito Santo em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1543,7 +1543,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/Espírito_Santo',
+        'value' => 'http://dbpedia.org/resource/EspÃ­rito_Santo',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1577,7 +1577,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1612,7 +1612,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida no Espírito Santo em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida no EspÃ­rito Santo em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1648,7 +1648,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/Espírito_Santo',
+        'value' => 'http://dbpedia.org/resource/EspÃ­rito_Santo',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1682,7 +1682,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1717,7 +1717,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Espírito Santo em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida no EspÃ­rito Santo em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1753,7 +1753,7 @@ array (
       0 => 
       array (
         'type' => 'uri',
-        'value' => 'http://dbpedia.org/resource/Espírito_Santo',
+        'value' => 'http://dbpedia.org/resource/EspÃ­rito_Santo',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/classeagrotoxico' => 
@@ -1787,7 +1787,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1822,7 +1822,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida no Espírito Santo em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida no EspÃ­rito Santo em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1892,7 +1892,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -1927,7 +1927,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em Minas Gerais em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida em Minas Gerais em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -1997,7 +1997,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -2032,7 +2032,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo herbicida em Minas Gerais em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo herbicida em Minas Gerais em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -2102,7 +2102,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -2137,7 +2137,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em Minas Gerais em 2011',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida em Minas Gerais em 2011',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
@@ -2207,7 +2207,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico de uma determinada Classe em um determinado Estado e um Ano. ',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico de uma determinada Classe em um determinado Estado e um Ano. ',
       ),
     ),
     'http://dadoscontraosagrotoxicos.org/datacube/properties/custocompra' => 
@@ -2242,7 +2242,7 @@ array (
       0 => 
       array (
         'type' => 'literal',
-        'value' => 'Quantidade de intoxicações por consumo de Agrotóxico do tipo inseticida em Minas Gerais em 2012',
+        'value' => 'Quantidade de intoxicaÃ§Ãµes por consumo de AgrotÃ³xico do tipo inseticida em Minas Gerais em 2012',
         'datatype' => 'http://dbpedia.org/resource/String',
       ),
     ),
